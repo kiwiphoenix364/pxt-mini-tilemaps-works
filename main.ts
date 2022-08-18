@@ -79,9 +79,9 @@ game.onUpdate(function () {
                     if (canx == 1) {
                         mySprite.x += (curx - MiniTilemaps.readDataNumber(mySprite, "prevx")) / repeat
                         if (canx == 1) {
-                            for (let index2 = mySprite.left; index2 <= mySprite.width + mySprite.left; index2++) {
-                                for (let index3 = mySprite.top; index3 <= mySprite.height + mySprite.top; index3++) {
-                                    if (TileCollisionArrayX.get(index2) == index2 && TileCollisionArrayY.get(index3) == index3) {
+                            for (let index2 = 0; index2 <= mySprite.width; index2++) {
+                                for (let index3 = 0; index3 <= mySprite.height; index3++) {
+                                    if (TileCollisionArrayX.get(index2 + mySprite.left) == index2 + mySprite.left && TileCollisionArrayY.get(index3 + mySprite.top) == index3 + mySprite.top) {
                                         mySprite.x += 0 - (curx - MiniTilemaps.readDataNumber(mySprite, "prevx")) / repeat
                                         canx = 0
                                     }
@@ -93,9 +93,9 @@ game.onUpdate(function () {
                         mySprite.y += (cury - MiniTilemaps.readDataNumber(mySprite, "prevy")) / repeat
                         for (let index22 = 0; index22 <= TileCollisionArrayY.length; index22++) {
                             if (cany == 1) {
-                                for (let index2 = mySprite.left; index2 <= mySprite.width + mySprite.left; index2++) {
-                                    for (let index3 = mySprite.top; index3 <= mySprite.height + mySprite.top; index3++) {
-                                        if (TileCollisionArrayX.get(index2) == index2 && TileCollisionArrayY.get(index3) == index3) {
+                                for (let index2 = 0; index2 <= mySprite.width; index2++) {
+                                    for (let index3 = 0; index3 <= mySprite.height; index3++) {
+                                        if (TileCollisionArrayX.get(index2 + mySprite.left) == index2 + mySprite.left && TileCollisionArrayY.get(index3 + mySprite.top) == index3 + mySprite.top) {
                                             mySprite.x += 0 - (curx - MiniTilemaps.readDataNumber(mySprite, "prevx")) / repeat
                                             cany = 0
                                         }
