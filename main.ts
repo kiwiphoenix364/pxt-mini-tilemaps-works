@@ -78,14 +78,12 @@ game.onUpdate(function () {
                 for (let index = 0; index <= repeat; index++) {
                     if (canx == 1) {
                         mySprite.x += (curx - MiniTilemaps.readDataNumber(mySprite, "prevx")) / repeat
-                        if (canx == 1) {
-                            for (let index2 = 0; index2 <= mySprite.width; index2++) {
-                                if (TileCollisionArrayX.indexOf(index2 + Math.round(mySprite.left)) != -1) {
-                                    for (let index3 = 0; index3 <= mySprite.height; index3++) {
-                                        if (TileCollisionArrayY.indexOf(index3 + Math.round(mySprite.top)) != -1) {
-                                            mySprite.y += 0 - (cury - MiniTilemaps.readDataNumber(mySprite, "prevy")) / repeat
-                                            cany = 0
-                                        }
+                        for (let index2 = 0; index2 <= TileCollisionArrayX.length; index2++) {
+                            if (canx == 1) {
+                                if ((TileCollisionArrayX[index2] - mySprite.left + 1 > 0 && TileCollisionArrayX[index2] - mySprite.left - 1 < mySprite.width) && (TileCollisionArrayY[index2] - mySprite.top + 1 > 0 && TileCollisionArrayY[index2] - mySprite.top - 1 < mySprite.height)) {
+                                    if (mySprite.image.getPixel(TileCollisionArrayX[index2] - mySprite.left, TileCollisionArrayY[index2] - mySprite.top) != 0) {
+                                        mySprite.x += 0 - (curx - MiniTilemaps.readDataNumber(mySprite, "prevx")) / repeat
+                                        canx = 0
                                     }
                                 }
                             }
@@ -95,14 +93,10 @@ game.onUpdate(function () {
                         mySprite.y += (cury - MiniTilemaps.readDataNumber(mySprite, "prevy")) / repeat
                         for (let index22 = 0; index22 <= TileCollisionArrayY.length; index22++) {
                             if (cany == 1) {
-                                for (let index2 = 0; index2 <= mySprite.width; index2++) {
-                                    if (TileCollisionArrayX.indexOf(index2 + Math.round(mySprite.left)) != -1) {
-                                        for (let index3 = 0; index3 <= mySprite.height; index3++) {
-                                            if (TileCollisionArrayY.indexOf(index3 + Math.round(mySprite.top)) != -1) {
-                                                mySprite.y += 0 - (cury - MiniTilemaps.readDataNumber(mySprite, "prevy")) / repeat
-                                                cany = 0
-                                            }
-                                        }
+                                if ((TileCollisionArrayX[index22] - mySprite.left + 1 > 0 && TileCollisionArrayX[index22] - mySprite.left - 1 < mySprite.width) && (TileCollisionArrayY[index22] - mySprite.top + 1 > 0 && TileCollisionArrayY[index22] - mySprite.top - 1 < mySprite.height)) {
+                                    if (mySprite.image.getPixel(TileCollisionArrayX[index22] - mySprite.left, TileCollisionArrayY[index22] - mySprite.top) != 0) {
+                                        mySprite.y += 0 - (cury - MiniTilemaps.readDataNumber(mySprite, "prevy")) / repeat
+                                        cany = 0
                                     }
                                 }
                             }
@@ -115,3 +109,4 @@ game.onUpdate(function () {
         }
     }
 })
+list.indexOf()
