@@ -109,3 +109,4 @@ game.onUpdate(function () {
         }
     }
 })
+list.indexOf()
