@@ -80,9 +80,9 @@ game.onUpdate(function () {
                         mySprite.x += (curx - MiniTilemaps.readDataNumber(mySprite, "prevx")) / repeat
                         if (canx == 1) {
                             for (let index2 = 0; index2 <= mySprite.width; index2++) {
-                                if (TileCollisionArrayX.get(index2 + Math.round(mySprite.left)) != -1) {
+                                if (TileCollisionArrayX.indexOf(index2 + Math.round(mySprite.left)) != -1) {
                                     for (let index3 = 0; index3 <= mySprite.height; index3++) {
-                                        if (TileCollisionArrayY.get(index3 + Math.round(mySprite.top)) != -1) {
+                                        if (TileCollisionArrayY.indexOf(index3 + Math.round(mySprite.top)) != -1) {
                                             mySprite.y += 0 - (cury - MiniTilemaps.readDataNumber(mySprite, "prevy")) / repeat
                                             cany = 0
                                         }
@@ -96,9 +96,9 @@ game.onUpdate(function () {
                         for (let index22 = 0; index22 <= TileCollisionArrayY.length; index22++) {
                             if (cany == 1) {
                                 for (let index2 = 0; index2 <= mySprite.width; index2++) {
-                                    if (TileCollisionArrayX.get(index2 + Math.round(mySprite.left)) != -1) {
+                                    if (TileCollisionArrayX.indexOf(index2 + Math.round(mySprite.left)) != -1) {
                                         for (let index3 = 0; index3 <= mySprite.height; index3++) {
-                                            if (TileCollisionArrayY.get(index3 + Math.round(mySprite.top)) != -1) {
+                                            if (TileCollisionArrayY.indexOf(index3 + Math.round(mySprite.top)) != -1) {
                                                 mySprite.y += 0 - (cury - MiniTilemaps.readDataNumber(mySprite, "prevy")) / repeat
                                                 cany = 0
                                             }
