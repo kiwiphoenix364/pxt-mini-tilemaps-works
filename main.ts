@@ -96,7 +96,7 @@ game.onUpdate(function () {
                                 for (let index2 = 0; index2 <= mySprite.width; index2++) {
                                     for (let index3 = 0; index3 <= mySprite.height; index3++) {
                                         if (TileCollisionArrayX.get(index2 + mySprite.left) == index2 + mySprite.left && TileCollisionArrayY.get(index3 + mySprite.top) == index3 + mySprite.top) {
-                                            mySprite.x += 0 - (curx - MiniTilemaps.readDataNumber(mySprite, "prevx")) / repeat
+                                            mySprite.y += 0 - (cury - MiniTilemaps.readDataNumber(mySprite, "prevy")) / repeat
                                             cany = 0
                                         }
                                     }
